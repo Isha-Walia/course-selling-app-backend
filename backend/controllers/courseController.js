@@ -2,7 +2,7 @@ const Course= require("../models/Course")
 
 //create a new course(Only instructors)
 
-exports.createCourse= async(req,res)=>{
+const createCourse= async(req,res)=>{
     try{
         if(req.user.role !=="instructor"){
             return res.status(403).json({message:"only instructors can create courses"})
@@ -30,3 +30,5 @@ const courses = await Course.find().populate
 
     }
 }
+
+module.exports= {createCourse}

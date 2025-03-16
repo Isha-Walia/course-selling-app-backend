@@ -32,7 +32,7 @@ exports.login= async(req,res)=>{
         const isMatch = await bcrypt.compare(password, user.password)
         if(!isMatch) return res.status(400).json({message:"invalid credentials"})
         
-        res.cookie("token", generateToken(user), {httpOnly: true})
+        //res.cookie("token", generateToken(user), {httpOnly: true})
         res.status(200).json({message:"login successful", token:generateToken(user)})
 
 

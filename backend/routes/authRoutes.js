@@ -3,9 +3,9 @@ const {register, login}= require("../controllers/authController")
 //const {check, validationResult}= require("express-validator")
 
 
-const router= express.Router()
+const authRoutes= express.Router()
 
-router.post("/register",register)
-router.post("/login", login)
+authRoutes.post("/register",register)
+authRoutes.post("/login", login)
 
-module.exports= router
+module.exports=authRoutes 
